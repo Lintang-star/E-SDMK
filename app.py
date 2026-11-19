@@ -1794,7 +1794,7 @@ def page_pengaturan():
             c = st.text_input("Unit Kerja", value=str(S("unit")))
             d = st.text_input("PJ Default (otomatis terisi di form baru)", value=str(S("default_pj") or ""))
             e = st.number_input("Batas ukuran lampiran (MB)", min_value=1, max_value=25, value=int(S("max_upload_mb")), step=1)
-            if st.form_submit_button("💾 Simpan", type="primary", **WB):
+            if st.form_submit_button("Simpan", type="primary", **WB):
                 for k, v in (("app_name", a.strip() or DEFAULTS["app_name"]), ("instansi", b.strip()), ("unit", c.strip()),
                              ("default_pj", d.strip()), ("max_upload_mb", int(e))):
                     set_setting(k, v)
@@ -1820,7 +1820,7 @@ def page_pengaturan():
             w = st.number_input("Dokumen dianggap 'Segera Berakhir' bila sisa ≤ (hari)", min_value=7, max_value=365, value=int(S("warn_days")), step=1)
             k = st.number_input("Dokumen dianggap 'Kritis' bila sisa ≤ (hari)", min_value=1, max_value=364, value=int(S("kritis_days")), step=1)
             h = st.number_input("Rentang default Agenda (hari ke depan)", min_value=7, max_value=365, value=int(S("horizon_days")), step=1)
-            if st.form_submit_button("💾 Simpan", type="primary", **WB):
+            if st.form_submit_button("Simpan", type="primary", **WB):
                 if k >= w:
                     st.error("Batas 'Kritis' harus lebih kecil dari 'Segera Berakhir'.")
                 else:
@@ -1836,7 +1836,7 @@ def page_pengaturan():
             newm = {}
             for key, label in MASTER_LABELS.items():
                 newm[key] = st.text_area(label, value="\n".join(MASTER[key]), height=110, key=f"m_{key}")
-            if st.form_submit_button("💾 Simpan Master Data", type="primary", **WB):
+            if st.form_submit_button("Simpan Master Data", type="primary", **WB):
                 out = {}
                 for k, v in newm.items():
                     items = list(dict.fromkeys([x.strip() for x in v.splitlines() if x.strip()]))
@@ -1858,7 +1858,7 @@ def page_pengaturan():
         with st.form("set_auth"):
             a = st.text_input("Password Admin baru", type="password")
             v = st.text_input("Password Viewer baru (opsional)", type="password")
-            if st.form_submit_button("💾 Simpan Password", type="primary", **WB):
+            if st.form_submit_button("Simpan Password", type="primary", **WB):
                 if not a and not v:
                     st.error("Isi minimal salah satu password.")
                 elif v and not (a or has_admin):
@@ -1914,7 +1914,7 @@ def page_pengaturan():
             with st.form("set_gh"):
                 ab = st.checkbox("Aktifkan backup otomatis setelah ada perubahan data", value=bool(S("auto_backup")))
                 iv = st.number_input("Jeda minimal antar backup (menit)", min_value=1, max_value=1440, value=int(S("backup_interval_min")), step=1)
-                if st.form_submit_button("💾 Simpan", type="primary", **WB):
+                if st.form_submit_button("Simpan", type="primary", **WB):
                     set_setting("auto_backup", bool(ab), track=False)
                     set_setting("backup_interval_min", int(iv), track=False)
                     flash("success", "Pengaturan backup tersimpan.")
@@ -2048,13 +2048,13 @@ def main():
     if page == "home":
         page_home()
     elif page == "dokumen":
-        page_module("dokumen", "🤝", "Pencatatan dan pemantauan masa berlaku MoU, Perjanjian Kerja Sama (PKS), dan Kesepakatan Bersama (KB).")
+        page_module("dokumen", "Pencatatan dan pemantauan masa berlaku MoU, Perjanjian Kerja Sama (PKS), dan Kesepakatan Bersama (KB).")
     elif page == "praktik":
-        page_module("praktik", "🎓", "Pengajuan, persetujuan, jadwal, dan evaluasi praktik mahasiswa di fasilitas kesehatan.")
+        page_module("praktik", "Pengajuan, persetujuan, jadwal, dan evaluasi praktik mahasiswa di fasilitas kesehatan.")
     elif page == "penelitian":
-        page_module("penelitian", "🔬", "Perizinan, jadwal, kelaikan etik, dan penyerahan laporan hasil penelitian.")
+        page_module("penelitian", "Perizinan, jadwal, kelaikan etik, dan penyerahan laporan hasil penelitian.")
     elif page == "tugas":
-        page_module("tugas", "✅", "Daftar tindak lanjut PJ SDMK: perpanjangan dokumen, verifikasi berkas, penagihan laporan, dll.")
+        page_module("tugas", "Daftar tindak lanjut PJ SDMK: perpanjangan dokumen, verifikasi berkas, penagihan laporan, dll.")
     elif page == "agenda":
         page_agenda()
     elif page == "laporan":
