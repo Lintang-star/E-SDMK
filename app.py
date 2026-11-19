@@ -1784,8 +1784,8 @@ def make_demo():
 def page_pengaturan():
     page_header("⚙️ Pengaturan Lanjutan", "Atur identitas, tampilan, peringatan, master data, keamanan, dan backup.")
     show_flash()
-    tabs = st.tabs(["🏢 Umum", "🎨 Tampilan", "⏰ Peringatan", "🗂️ Master Data", "🔐 Keamanan",
-                    "💾 Backup & Restore", "📥 Impor Data", "🧪 Data Demo / Reset"])
+    tabs = st.tabs(["Umum", "Tampilan", "Peringatan", "Master Data", "Keamanan",
+                    "Backup & Restore", "Impor Data", "Data Demo / Reset"])
 
     with tabs[0]:
         with st.form("set_umum"):
@@ -2001,9 +2001,9 @@ def page_log():
 # 17. MAIN
 # =============================================================================
 MENU = [
-    ("home", "🏠 Beranda"), ("dokumen", "🤝 MoU · PKS · KB"), ("praktik", "🎓 Praktik Mahasiswa"),
-    ("penelitian", "🔬 Penelitian"), ("tugas", "✅ Tindak Lanjut"), ("agenda", "📅 Agenda & Pengingat"),
-    ("laporan", "📊 Laporan & Ekspor"), ("pengaturan", "⚙️ Pengaturan"), ("log", "🧾 Log Aktivitas"),
+    ("home", "Beranda"), ("dokumen", "MoU · PKS · KB"), ("praktik", "Praktik Mahasiswa"),
+    ("penelitian", "Penelitian"), ("tugas", "Tindak Lanjut"), ("agenda", "Agenda & Pengingat"),
+    ("laporan", "Laporan & Ekspor"), ("pengaturan", "Pengaturan"), ("log", "Log Aktivitas"),
 ]
 ADMIN_ONLY = {"pengaturan", "log"}
 
