@@ -2001,9 +2001,9 @@ def page_log():
 # 17. MAIN
 # =============================================================================
 MENU = [
-    ("home", "🏠 Beranda"), ("dokumen", "🤝 MoU · PKS · KB"), ("praktik", "🎓 Praktik Mahasiswa"),
-    ("penelitian", "🔬 Penelitian"), ("tugas", "✅ Tindak Lanjut"), ("agenda", "📅 Agenda & Pengingat"),
-    ("laporan", "📊 Laporan & Ekspor"), ("pengaturan", "⚙️ Pengaturan"), ("log", "🧾 Log Aktivitas"),
+    ("home", "Beranda"), ("dokumen", "MoU · PKS · KB"), ("praktik", "Praktik Mahasiswa"),
+    ("penelitian", "Penelitian"), ("tugas", "Tindak Lanjut"), ("agenda", "Agenda & Pengingat"),
+    ("laporan", "Laporan & Ekspor"), ("pengaturan", "Pengaturan"), ("log", "Log Aktivitas"),
 ]
 ADMIN_ONLY = {"pengaturan", "log"}
 
